@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results - Local Classic Key Scanner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M12 1a4 4 0 0 0-4 4v2h8V5a4 4 0 0 0-4-4zm0 10a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0v-6a1 1 0 0 0-1-1zm6-4H6a3 3 0 0 0-3 3v13h18V7a3 3 0 0 0-3-3z' /%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <h1>Scan Results</h1>
+        <p><a href="/">&#8592; Back to Scan Page</a></p>
+
+        <div class="summary">
+            <h2>Scan Summary</h2>
+            <p><strong>Scanned Directories:</strong> PLACEHOLDER_SCANNED_DIRECTORIES</p>
+            <p><strong>Content Scan:</strong> PLACEHOLDER_CONTENT_SCAN_STATUS</p>
+            <p><strong>Follow Symlinks:</strong> PLACEHOLDER_SYMLINK_STATUS</p>
+            <p class="admin-status PLACEHER_IS_ADMIN_CLASS">Status: <span class="admin-text">PLACEHOLDER_ADMIN_STATUS_TEXT</span></p>
+            <p><strong>Total Files Processed (matching criteria):</strong> PLACEHOLDER_NUM_TOTAL_RESULTS</p>
+            <p><strong>Private Keys Found:</strong> PLACEHOLDER_NUM_PRIVATE_KEYS</p>
+            <p><strong>Public Certificates Found:</strong> PLACEHOLDER_NUM_PUBLIC_CERTS</p>
+            <p><strong>Certificate Signing Requests (CSRs) Found:</strong> PLACEHOLDER_NUM_CS_REQUESTS</p>
+        </div>
+
+        <div class="results-section">
+            <h2>Scan Details</h2>
+            <p>Below are the cryptographic artifacts identified during the scan. Private keys are highlighted as they represent the most significant security concern.</p>
+
+            PLACEHOLDER_PRIVATE_KEYS_TABLE
+            PLACEHOLDER_OTHER_ARTIFACTS_TABLE
+        </div>
+
+        <footer>
+            <p>Built with Python's http.server (Homegrown) for local use only.</p>
+            <p>Ensure <code>style.css</code>, <code>index.html</code>, and <code>results.html</code> are in the same directory as the script.</p>
+            <p>For more secure key management, consider hardware security modules (HSMs) or secure key vaults.</p>
+        </footer>
+    </div>
+</body>
+</html>

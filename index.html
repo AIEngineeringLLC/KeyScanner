@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Classic Key Scanner</title>
+    
+    <!-- Favicon: Using log.jpg as the primary favicon -->
+    <link rel="icon" href="/logo.jpg" type="image/jpeg">
+    <!-- You can remove the SVG favicon if you prefer only log.jpg to be the icon -->
+    <!-- <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M12 1a4 4 0 0 0-4 4v2h8V5a4 4 0 0 0-4-4zm0 10a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0v-6a1 1 0 0 0-1-1zm6-4H6a3 3 0 0 0-3 3v13h18V7a3 3 0 0 0-3-3z' /%3E%3C/svg%3E" type="image/svg+xml"> -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo added here within a new flexible container -->
+        <div class="header-with-logo">
+            <img src="/logo.jpg" alt="Key Scanner Logo" class="logo">
+            <h1>Local Classic Key Scanner</h1>
+        </div>
+        
+        <p>This tool helps you identify unencrypted private keys, public certificates, and certificate signing requests (CSRs) stored on your local file system which might pose a security risk or indicate sensitive assets.</p>
+        <p><strong>Note:</strong> Sensitive data like keys should generally be stored encrypted and with strict access controls. Unencrypted private keys are a significant security vulnerability.</p>
+
+        PLACEHOLDER_ERROR_MESSAGE
+        PLACEHOLDER_NO_DIRS_MESSAGE
+
+        <form action="/scan" method="POST">
+            <div class="scan-options">
+                <h2>1. Select Directories to Scan:</h2>
+                <p>Default directories where keys are commonly found. Check the ones you wish to scan.</p>
+                <div class="directory-list">
+                    PLACEHOLDER_CHECKBOXES
+                </div>
+            </div>
+
+            <div class="advanced-options">
+                <h2>2. Scan Options:</h2>
+                <div class="option-group">
+                    <input type="checkbox" id="content_scan" name="content_scan" value="true">
+                    <label for="content_scan">
+                        <strong>Perform Deep Content Scan (Recommended)</strong>
+                        <span class="tooltip-icon">?</span>
+                        <span class="tooltip-text">Inspects file contents for key headers regardless of filename or extension. This significantly increases scan time but finds more hidden keys/certs.</span>
+                    </label>
+                </div>
+                <div class="option-group">
+                    <input type="checkbox" id="follow_symlinks" name="follow_symlinks" value="true">
+                    <label for="follow_symlinks">
+                        <strong>Follow Symbolic Links</strong>
+                        <span class="tooltip-icon">?</span>
+                        <span class="tooltip-text">Traverse symbolic links (shortcuts) to discover keys in linked directories. Can lead to re-scanning already included paths if links point within a selected parent directory.</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="scan-button">Start Scan</button>
+        </form>
+
+        <footer>
+            <p>about.aiengineering.io</p>
+            <p>Ensure <code>style.css</code>, <code>index.html</code>, and <code>results.html</code> are in the same directory as the script.</p>
+            <p>For more secure key management, consider hardware security modules (HSMs) or secure key vaults.</p>
+        </footer>
+    </div>
+</body>
+</html>
