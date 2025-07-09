@@ -41,7 +41,9 @@ Once you've selected your directories and chosen your options, click the "Start 
 
 The browser will navigate to the results page, showing any identified private keys, public certificates, or certificate signing requests (CSRs).
 Private keys that are unencrypted will be highlighted as a security risk.
-⚠️ Important Scan Performance Note ⚠️
-Toggling on Perform Deep Content Scan and/or Follow Symbolic Links will significantly increase scan time, especially if you're scanning large hard drives or many directories.
+
+⚠️ Important Scan Performance Note
+
+⚠️Toggling on Perform Deep Content Scan and/or Follow Symbolic Links will significantly increase scan time, especially if you're scanning large hard drives or many directories.
 
 Please be patient! For a truly comprehensive scan, it might take a while. Grab a coffee! ☕
